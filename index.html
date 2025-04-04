@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<!-- Font Awesome for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<!-- Custom stylesheet -->
+<link rel="stylesheet" href="style.css">
+<title>Calendar</title>
+</head>
+
+<body>
+
+<div class="calendar">
+    <div class="header">
+        <!-- Button to navigate to the previous month -->
+        <button id="prevBtn">
+            <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <!-- Displays the current month and year -->
+        <div class="monthYear" id="monthYear"></div>
+        <!-- Button to navigate to the next month -->
+        <button id="nextBtn">
+            <i class="fa-solid fa-chevron-right"></i>
+        </button>
+    </div>
+
+    <div class="days">
+        <!-- Weekday labels -->
+        <div class="day">Mon</div>    
+        <div class="day">Tue</div>    
+        <div class="day">Wed</div>    
+        <div class="day">Thu</div>    
+        <div class="day">Fri</div>    
+        <div class="day">Sat</div>    
+        <div class="day">Sun</div>    
+    </div>
+
+    <!-- Container for dynamically generated date elements -->
+    <div class="dates" id="dates"></div>
+</div>
+
+<!-- Modal for booking an appointment -->
+<div id="bookingModal" class="modal">
+    <div class="modal-content">
+        <!-- Close button for modal -->
+        <span class="close">&times;</span>
+        <h2>Book Appointment</h2>
+        <!-- Displays the selected date -->
+        <p id="selectedDateText"></p>
+        
+        <!-- Input for event details -->
+        <label for="eventName">Event Name:</label>
+        <input type="text" id="eventName" placeholder="Enter event name">
+
+        <label for="eventLocation">Location:</label>
+        <input type="text" id="eventLocation" placeholder="Enter location">
+
+        <!-- Select start and end date/time for event -->
+        <label for="startDateTime">Start Date & Time:</label>
+        <input type="datetime-local" id="startDateTime">
+
+        <label for="endDateTime">End Date & Time:</label>
+        <input type="datetime-local" id="endDateTime">
+
+        <!-- Dropdown to select recurring event frequency -->
+        <label for="recurring">Repeat:</label>
+        <select id="recurring">
+            <option value="none">None</option>
+            <option value="daily">Daily</option>
+            <option value="weekly">Weekly</option>
+            <option value="bi-weekly">Bi-Weekly</option>
+            <option value="monthly">Monthly</option>
+            <option value="yearly">Yearly</option>
+        </select>
+
+
+        <label for="alert1">Alert 1:</label>
+        <select id="alert1">
+            <option value="none">None</option>
+            <option value="at-time">At event time</option>
+            <option value="5-mins">5 minutes before</option>
+            <option value="10-mins">10 minutes before</option>
+            <option value="15-mins">15 minutes before</option>
+            <option value="30-mins">30 minutes before</option>
+            <option value="1-hour">1 hour before</option>
+            <option value="2-hours">2 hours before</option>
+            <option value="1-day">1 day before</option>
+            <option value="2-days">2 days before</option>
+            <option value="1-week">1 week before</option>
+        </select>
+
+        <label for="alert2" id="alert2Label" style="display: none;">Alert 2:</label>
+        <select id="alert2" style="display: none;">
+            <option value="none">None</option>
+            <option value="at-time">At event time</option>
+            <option value="5-mins">5 minutes before</option>
+            <option value="10-mins">10 minutes before</option>
+            <option value="15-mins">15 minutes before</option>
+            <option value="30-mins">30 minutes before</option>
+            <option value="1-hour">1 hour before</option>
+            <option value="2-hours">2 hours before</option>
+            <option value="1-day">1 day before</option>
+            <option value="2-days">2 days before</option>
+            <option value="1-week">1 week before</option>
+        </select>
+
+        <button id="confirmBooking">Confirm</button>
+    </div>
+</div>
+
+<div id="savedEvents" class="event-list">
+    <h3>Your Booked Events</h3>
+    <ul id="eventsList"></ul>
+</div>
+
+
+<div id="eventDisplay" class="event-display"></div>
+<div id="clock" class="clock"></div>
+
+
+<script src="main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+body::before {
+	min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url('https://i.postimg.cc/ZRMTKrjv/google-calendar-background-tfpb8g86k386xz0l.jpg') no-repeat center center fixed;
+    background-size: 100% auto;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+	image-rendering: crisp-edges;
+	image-rendering: -webkit-optimize-contrast;
+}
+
+
+.login-container {
+    width: 300px;
+    padding: 20px;
+    background: white;
+    text-align: center; /* Centers text inside the container */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    margin: auto;
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers child elements horizontally */
+}
+
+.login-container input {
+    width: 90%; /* Ensures inputs fit inside */
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    text-align: center; /* Centers text inside input fields */
+}
+
+.login-container button {
+    width: 100%;
+    padding: 10px;
+    background: #28a745;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+button:hover {
+    background: #218838;
+}

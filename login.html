@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    
+    <!-- Font Awesome for icons (not used currently, but can be useful for future enhancements) -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="styles.css"> <!-- Linking external CSS file for styling -->
+</head>
+<body>
+    <div class="login-container">
+        <h2>Login</h2>
+        
+        <!-- Username input field -->
+        <label for="username">Username:</label>
+        <input type="text" id="username" placeholder="Enter username">
+
+        <!-- Password input field -->
+        <label for="password">Password:</label>
+        <input type="password" id="password" placeholder="Enter password">
+
+        <!-- Login button -->
+        <button id="loginBtn">Login</button>
+
+        <!-- Error message (hidden by default) -->
+        <p id="errorMessage" style="color: red; display: none;">Invalid login. Try again.</p>
+    </div>
+
+    <script>
+        // Adding an event listener to the login button
+        document.getElementById("loginBtn").addEventListener("click", function() {
+            const username = document.getElementById("username").value; // Get entered username
+            const password = document.getElementById("password").value; // Get entered password
+
+            // Replace these with actual authentication logic (e.g., checking against a database)
+            const validUsername = "admin"; // Hardcoded valid username
+            const validPassword = "1234"; // Hardcoded valid password
+
+            if (username === validUsername && password === validPassword) {
+                window.location.href = "index.html"; // Redirect to main app on successful login
+            } else {
+                document.getElementById("errorMessage").style.display = "block"; // Show error message on failure
+            }
+        });
+    </script>
+</body>
+</html>
